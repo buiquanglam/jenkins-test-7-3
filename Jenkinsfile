@@ -29,7 +29,7 @@ pipeline {
         }
         stage("Deploy"){
             options {
-                timeout(time: 10, unit: 'MINUTES')
+                timeout(time: 5, unit: 'MINUTES')
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
